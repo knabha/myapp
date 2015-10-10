@@ -1,1 +1,41 @@
 /* Empty. Add your own CSS if you like */
+/*.pane {
+    background-color: #000;
+}
+*/
+
+.pane.left-view {
+  left: 0;
+  width: 33%;
+}
+
+.pane.right-view {
+  left: 33%;
+  width: 67%;
+}
+
+/*
+.pane {
+
+background: url(../img/nice.jpg) no-repeat center center fixed;
+
+-webkit-background-size: cover;
+
+-moz-background-size: cover;
+
+background-size: cover;
+
+}
+*/
+
+/*.login {
+    background: url(../img/nice.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 80%;
+    height: 246px;
+    margin: auto;
+    z-index: 2;
+    position: relative;
+}*/

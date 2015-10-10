@@ -36,15 +36,15 @@ angular.module('myapp', ['ionic', 'myapp.controllers'])
   })
 
 
-  // .state('NewOrder', {
-  //   url: '/NewOrder',
-  //   views: {
-  //     'NewOrder': {
-  //       templateUrl: 'templates/NewOrder.html',
-  //       controller: 'NewOrderCtrl'
-  //     }
-  //   }
-  // })
+  .state('NewOrder', {
+    url: '/NewOrder',
+    // views: {
+      // 'NewOrder': {
+        templateUrl: 'templates/NewOrder.html',
+        controller: 'NewOrderCtrl'
+      // }
+    // }
+  })
 
   // .state('CurrentOrders', {
   //     url: '/CurrentOrders',

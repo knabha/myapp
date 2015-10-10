@@ -1,24 +1,69 @@
-<!-- <ion-view view-title="NewOrder" class="NewOrder-page">
-
-    <ion-header-bar align-title="left" class="bar-positive">
-      <div class="buttons">
-        <button class="button" ng-click="doSomething()">Left Button</button>
-      </div>
-      <h1 class="title">Title!</h1>
-      <div class="buttons">
-        <button class="button">Right Button</button>
-      </div>
-    </ion-header-bar>
-   
-
+<ion-view class="left-view" view-title="New Order">
 
     <ion-content>
-      Hello
+
+      <!-- headers -->
+      <div class="bar bar-header">
+        <button class="button icon ion-navicon"></button>
+        <h1 class="title">What to order today</h1>
+        <button class="button">Edit</button>
+      </div>  
+
+      <!-- end headers -->
+    
+          <!-- text elements -->
+      <h1>I'm an H1!</h1>
+
+    <ion-list>
+      <ion-item ng-repeat="task in tasks">
+        <!-- {{task.title}} -->
+
+        <div class="row" >
+            <div class="col col-50">{{task.title}}</div>
+             
+
+
+        </div>
+      </ion-item>
+    </ion-list>
+    
     </ion-content>
 
-</ion-view>
- -->
+  <div class="bar bar-footer bar-balanced">
+    <div class="title">Great</div>
+  </div> 
 
-<div class="bar bar-header bar-dark">
-  <h1 class="title">bar-dark</h1>
-</div>
+</ion-view>
+
+
+
+<ion-view class="right-view" view-title="New Order">
+
+    <ion-content>
+
+      <!-- headers -->
+      <div class="bar bar-header">
+        <button class="button icon ion-navicon"></button>
+        <h1 class="title">What to order today</h1>
+        <button class="button">make</button>
+      </div>  
+
+      <h1>I'm an H1!</h1>
+
+    
+      <div class="button-bar">
+          <a class="button" ng-click = "create()" ><img src = "http://nuclearpixel.com/content/icons/2010-02-09_stellar_icons_from_space_from_2005/earth_128.png" > </a>
+          <a class="button" ng-click = "create()" ><img src = "http://nuclearpixel.com/content/icons/2010-02-09_stellar_icons_from_space_from_2005/earth_128.png"  > </a>
+          <a class="button" ng-click = "create()" ><img src = "http://nuclearpixel.com/content/icons/2010-02-09_stellar_icons_from_space_from_2005/earth_128.png"  > </a>
+          <a class="button" ng-click = "create()" ><img src = "http://nuclearpixel.com/content/icons/2010-02-09_stellar_icons_from_space_from_2005/earth_128.png"  > </a>
+      </div>
+
+
+    </ion-content>
+
+
+  <div class="bar bar-footer bar-balanced">
+    <div class="title">Great</div>
+  </div> 
+
+</ion-view>

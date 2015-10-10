@@ -1,28 +1,451 @@
-<ion-view title="{{listname}}">
-    <ion-content class="has-header">
-        <ion-list>
-            <ion-item ng-repeat="item in tracks" class="list card">
-                <div class="item item-avatar">
-                    <img src="{{item.track.album.images[0].url}}">
-                    <h2>{{item.track.name}}</h2>
-                    <p>{{item.track.artists[0].name}}</p>
-                </div>
-                <div class="item tabs tabs-secondary tabs-icon-left">
-                    <a class="tab-item" ng-click="playTrack(item)">
-                        <i class="icon ion-music-note"></i>
-                        Play Preview
-                    </a>
-                    <a class="tab-item" ng-click="openSpotify(item.track.external_urls.spotify)">
-                        <i class="icon ion-share"></i>
-                        Open in Spotify
-                    </a>
-                </div>
-            </ion-item>
-        </ion-list>
+<ion-view view-title="My Pages">
+
+    <ion-content>
+
+      <!-- headers -->
+      <div class="bar bar-header">
+        <button class="button icon ion-navicon"></button>
+        <h1 class="title">Ionic is great!</h1>
+        <button class="button">Edit</button>
+      </div>  
+
+      <div class="bar bar-subheader">
+        <h2 class="title">Scroll down to see all the Ionic input elements</h2>
+      </div>
+      <!-- end headers -->
+    
+          <!-- text elements -->
+      <h1>I'm an H1!</h1>
+      <h2>I'm an H2!</h2>
+      <h3>I'm an H3!</h3>
+      <h4>I'm an H4!</h4>
+      <h5>I'm an H5!</h5>
+      <h6>{{myTitle}}</h6>
+      <p>I'm a paragraph with a <a href="#">link</a>!</p>     
+      <!-- end text elements -->  
+
+
+      <!-- buttons -->
+      <button class="button">
+        Default
+      </button>
+      <button class="button button-light" ng-click = "create()">
+            <img src = "http://nuclearpixel.com/content/icons/2010-02-09_stellar_icons_from_space_from_2005/earth_512.png" >
+      </button>
+
+      <button class="button button-stable">
+            <img src = "http://nuclearpixel.com/content/icons/2010-02-09_stellar_icons_from_space_from_2005/moon_512.png" >
+      </button>
+
+
+
+        <div class="row" >
+            <div class="col col-50">{{task.title}}</div>
+             
+
+
+        </div>
+
+      <button class="button button-positive">
+        button-positive
+      </button>
+
+      <button class="button button-calm">
+        button-calm
+      </button>
+
+      <button class="button button-balanced">
+        button-balanced
+      </button>
+
+      <button class="button button-energized">
+        button-energized
+      </button>
+
+      <button class="button button-assertive">
+        button-assertive
+      </button>
+
+      <button class="button button-royal">
+        button-royal
+      </button>
+
+      <button class="button button-dark">
+        button-dark
+      </button>
+
+      <button class="button button-large button-dark">
+        Large Button
+      </button>
+
+      <button class="button button-outline button-dark">
+        Outlined Button
+      </button>      
+
+      <button class="button button-clear button-dark">
+        Clear Button
+      </button>
+
+      <button class="button button-small button-dark">
+        Small Button
+      </button>
+
+      <button class="button">
+        <i class="icon ion-loading-c"></i> Loading...
+      </button>
+
+      <button class="button icon-left ion-home">Home</button>
+
+      <button class="button icon-left ion-star button-positive">Favorites</button>
+
+      <a class="button icon-right ion-chevron-right button-dark">Learn More</a>
+
+      <a class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
+
+      <button class="button icon ion-gear-a"></button>
+
+      <a class="button button-icon icon ion-settings"></a>
+
+      <a class="button button-outline icon-right ion-navicon button-dark">Reorder</a>
+
+      <div class="button-bar">
+        <a class="button" href="#/templates/NewOrder">First </a>
+        <a class="button">Second</a>
+        <a class="button">Third</a>
+      </div>
+
+      <button class="button button-block button-dark">
+        Block Button
+      </button>
+
+      <button class="button button-full button-dark">
+        Full Width Block Button
+      </button>
+      <!-- end buttons -->
+
+
+      <!-- lists -->
+      <ul class="list">
+        <li class="item">Item 1</li>
+        <div class="item item-divider">
+          Divider
+        </div>        
+        <li class="item">Item 2</li>
+      </ul>      
+
+      <div class="list">
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-email"></i>
+          Check mail
+        </a>
+
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-mic-a"></i>
+          Record album
+        </a>
+
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-person-stalker"></i>
+          Friends
+          <span class="badge badge-assertive">0</span>
+        </a>
+      </div>
+
+      <div class="item item-button-right">
+        Call Ma
+        <button class="button button-positive">
+          <i class="icon ion-ios7-telephone"></i>
+        </button>
+      </div>
+
+
+      <div class="list">
+        <a class="item item-thumbnail-left" href="#">
+          <img src="http://www.brooklynvegan.com/img/music/oooooo/ps1/2.jpg">
+          <h2>Butterclock</h2>
+          <p>Milky Ways</p>
+        </a>
+      </div>
+
+      <div class="list list-inset">
+          <div class="item">
+            Inset item 1
+          </div>
+          <div class="item">
+            Inset item 2
+          </div>
+       </div>
+
+      <!-- end lists -->
+
+       <!-- cards -->
+      <div class="card">
+        <div class="item item-text-wrap">
+          This is a basic Card which contains an item that has wrapping text.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="item item-divider">
+          I'm a Header in a Card!
+        </div>
+        <div class="item item-text-wrap">
+          This is a basic Card with some text.
+        </div>
+        <div class="item item-divider">
+          I'm a Footer in a Card!
+        </div>
+      </div>
+
+      <div class="list card">
+
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-home"></i>
+          Enter home address
+        </a>
+
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-ios7-telephone"></i>
+          Enter phone number
+        </a>
+
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-wifi"></i>
+          Enter wireless password
+        </a>
+
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-card"></i>
+          Enter card information
+        </a>
+
+      </div>
+
+      <div class="list card">
+
+        <div class="item item-avatar">
+          <img src="http://www.brooklynvegan.com/img/music/oooooo/ps1/2.jpg">
+          <h2>Butterclock</h2>
+          <p>Milky Ways</p>
+        </div>
+
+        <a class="item item-icon-left assertive" href="#">
+          <i class="icon ion-music-note"></i>
+          Start listening
+        </a>
+
+      </div>
+
+      <div class="list card">
+
+        <div class="item item-avatar">
+          <img src="http://www.brooklynvegan.com/img/music/oooooo/ps1/2.jpg">
+          <h2>Butterclock</h2>
+          <p>November 05, 1993</p>
+        </div>
+
+        <div class="item item-body">
+          <p>
+            This is a "Facebook" styled Card. The footer
+            consists of tabs, icons aligned left, within the card-footer.
+          </p>
+          <p>
+            <a href="#" class="subdued">1 Like</a>
+            <a href="#" class="subdued">5 Comments</a>
+          </p>
+        </div>
+
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a class="tab-item" href="#">
+            <i class="icon ion-thumbsup"></i>
+            Like
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-chatbox"></i>
+            Comment
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-share"></i>
+            Share
+          </a>
+        </div>
+      </div>
+
+        <!-- end cards -->
+
+
+        <!-- form elements -->
+
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="First Name">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Last Name">
+          </label>
+          <label class="item item-input">
+            <textarea placeholder="Comments"></textarea>
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">First Name</span>
+            <input type="text" placeholder="John">
+          </label>
+
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Floating Label</span>
+            <input type="text" placeholder="Floating Label">
+          </label>
+        </div>
+
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="text" placeholder="Inset First Name">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Inset Last Name">
+          </label>
+        </div>
+
+        <div class="list list-inset">
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search">
+          </label>
+        </div>
+
+        <div class="bar bar-header item-input-inset">
+          <label class="item-input-wrapper">
+            <i class="icon ion-ios7-search placeholder-icon"></i>
+            <input type="search" placeholder="Search">
+          </label>
+          <button class="button button-clear">
+            Cancel
+          </button>
+        </div>
+
+        <label class="toggle">
+           <input type="checkbox">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+        </label>
+
+        <ul class="list">
+          <li class="item item-toggle">
+             HTML5
+             <label class="toggle toggle-assertive">
+               <input type="checkbox">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+          <li class="item item-toggle">
+             Silverlight
+             <label class="toggle toggle-assertive">
+               <input type="checkbox">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+        </ul>
+
+        <ul class="list">
+          <li class="item item-checkbox">
+             <label class="checkbox">
+               <input type="checkbox">
+             </label>
+             Flux Capacitor
+          </li>
+        </ul>
+        
+
+        <div class="list">
+          <label class="item item-radio">
+            <input type="radio" name="group">
+            <div class="item-content">
+              Go
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+          </label>
+          <label class="item item-radio">
+            <input type="radio" name="group">
+            <div class="item-content">
+              JavaScript
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+          </label>
+        </div>
+
+        <div class="range">
+          <i class="icon ion-volume-low"></i>
+          <input type="range" name="volume">
+          <i class="icon ion-volume-high"></i>
+        </div>
+
+        <div class="list">
+          <div class="item range range-positive">
+            <i class="icon ion-ios7-sunny-outline"></i>
+            <input type="range" name="volume" min="0" max="100" value="33">
+            <i class="icon ion-ios7-sunny"></i>
+          </div>
+        </div>
+
+        <!-- end form elements -->
+
+        <!-- grid -->
+      
+        <div class="row" responsive-sm>
+          <div class="col">.col</div>
+          <div class="col">.col</div>
+          <div class="col">.col</div>
+          <div class="col">.col</div>
+          <div class="col">.col</div>
+        </div>
+        <!-- end grid -->
+      
+    
+        <div class="row">
+            <div class="col">
+              <a href="" class="button button-icon">
+              <i class="icon ion-ionic my-icon"></i>
+              Text
+              </a>
+            </div>
+
+            <div class="col"><a href="" class="button button-icon">
+
+              <i class="icon ion-ionic my-icon"></i>Text</a></div>
+            <div class="col"><a href="" class="button button-icon">
+              <i class="icon ion-ionic my-icon"></i>Text</a>
+            </div>
+      </div>
+      <div class="row">
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+      </div>
+      <div class="row">
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon ">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+      </div>
+
+
+
+    <!-- end ion content -->
     </ion-content>
- 
-    <ion-footer-bar align-title="left" class="bar-light" ng-show="audio.src">
-        <button class="button button-outline button-balanced" ng-click="play()"><i class="ion-play"> Play</i></button>
-        <button class="button button-outline button-balanced" ng-click="stop()"><i class="ion-stop"> Stop</i></button>
-    </ion-footer-bar>
+
+    <div class="bar bar-footer bar-balanced">
+        <div class="title">Footer</div>
+    </div> 
+
 </ion-view>
+ 
