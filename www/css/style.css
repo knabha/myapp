@@ -12,12 +12,13 @@
 .pane.right-view {
   left: 33%;
   width: 67%;
+
+
 }
 
-/*
-.pane {
+.pane.left-view {
 
-background: url(../img/nice.jpg) no-repeat center center fixed;
+background: url(../img/ali_baba.jpg) no-repeat center center fixed;
 
 -webkit-background-size: cover;
 
@@ -26,16 +27,47 @@ background: url(../img/nice.jpg) no-repeat center center fixed;
 background-size: cover;
 
 }
-*/
 
-/*.login {
-    background: url(../img/nice.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    width: 80%;
-    height: 246px;
-    margin: auto;
-    z-index: 2;
-    position: relative;
+.pane.right-view {
+
+background: url(../img/ali_baba.jpg) no-repeat center center fixed;
+
+-webkit-background-size: cover;
+
+-moz-background-size: cover;
+
+background-size: cover;
+
+}
+
+
+.pull-right {
+    float:right;
+}
+
+/*.rrr{
+border-radius: 1px;
 }*/
+
+.item{
+  margin:0px !important;
+  /*padding: 9px !important;*/
+
+  /*height: 80px !auto;*/
+  /*background-color: transparent;*/
+}
+
+.noEdge{
+   border-width: 0!important ;
+   /*background-color: transparent;*/
+}
+
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+.checkbox {
+	width: 85%
+}
+.popup-body {
+	text-align: center;
+}
