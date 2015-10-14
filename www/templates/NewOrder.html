@@ -5,7 +5,7 @@
       <!-- headers -->
       <div class="bar bar-header">
         <button class="button" ng-click="selectAll()">Select all</button>
-        <h1 class="title">What to order today</h1>
+        <h1 class="title">On the Order</h1>
         <button class="button" ng-click="archive()">Delete</button>
       </div>  
 
@@ -14,10 +14,6 @@
           <!-- text elements -->
       <h1>I'm an H1!</h1>
 
-      <div class="button-bar">
-        <a class="button">Send</a>
-        <a class="button">Pay</a>
-      </div>
 
     <ion-list>
 
@@ -31,7 +27,7 @@
             {{todo.text}}
             <em class= "pull-right">{{todo.price | currency}}</em>
         </h2>
-        <li ng-repeat="ing in todo.ing">
+        <li ng-repeat="ing in todo.ing ">
             <h4 style="text-indent: 0em;">{{ing}}</h4>
 
         </li>
@@ -43,6 +39,17 @@
 
 
 
+      <ion-item>
+        <h2>
+            Total
+            <em class= "pull-right">{{getTotal() | currency}}</em>
+        </h2>
+      </ion-item>
+
+      <div class="button-bar">
+        <a class="button " ng-click="addOrders(7,[])" >Send</a>
+        <a class="button">Pay</a>
+      </div>
     
     </ion-content>
 
@@ -73,7 +80,7 @@
       </ul>
     
 
-      <div class="button-bar yuppp">
+      <div class="button-bar">
         <a class="button" ng-click = "selectTab(1)" ng-class = "{ active:isSelected(1) }">Inside</a>
         <a class="button" ng-click = "selectTab(2)" ng-class = "{ active:isSelected(2) }">Outside</a>
         <a class="button" ng-click = "selectTab(3)" ng-class = "{ active:isSelected(3) }">To Go</a>
@@ -81,12 +88,20 @@
       </div>
 
 
-      <div class="button-bar">
-          <a class="noEdge button button-outline " ng-click = "addTodo('Falafel' , ['7mose','t7ine','me'] , 500,'../img/falafel.jpg')" >       <img src = {{buttonImg[0]}}     height="128" width="128" > </a>
-          <a class="noEdge button button-outline" ng-click = "addTodo('Shawarma' , ['chicken','kassem'], 30,'../img/shawarma.jpg')" >            <img src = {{buttonImg[1]}}   height="128" width="128"> </a>
-          <a class="noEdge button button-outline" ng-click = "addTodo('Fatoush' , ['5obez','salad'], 550,'../img/fatosh.jpg')" >               <img src = {{buttonImg[2]}} height="128" width="128" > </a>
-          <a class="noEdge button button-outline" ng-click = "addTodo('vegi plater' , ['7omos','baba 8anoj'], 250,'../img/vegi_plater.JPG')" >      <img src = {{buttonImg[3]}}  height="128" width="128"> </a>
-          <a class="noEdge button button-outline" ng-click = "addTodo('vegi plater' , ['7omos','baba 8anoj'], 250,'../img/shawarma.jpg')" >      <img src = {{buttonImg[4]}}  height="128" width="128"> </a>
+      <div class="no_padding button-bar">
+          <a class="noEdge" ng-click = "addTodo('Falafel' , ['7mose','t7ine','me'] , 500,'../img/falafel.jpg')" > <img src = {{buttonImg[0]}}     height="128" width="128"  ></a>
+          <a class="noEdge" ng-click = "addTodo('Shawarma' , ['chicken','kassem'], 30,'../img/shawarma.jpg')" >            <img src = {{buttonImg[1]}}   height="128" width="128"> </a>
+          <a class="noEdge" ng-click = "addTodo('Fatoush' , ['5obez','salad'], 550,'../img/fatosh.jpg')" >               <img src = {{buttonImg[2]}} height="128" width="128" > </a>
+          <a class="noEdge" ng-click = "addTodo('vegi plater' , ['7omos','baba 8anoj'], 250,'../img/vegi_plater.JPG')" >      <img src = {{buttonImg[3]}}  height="128" width="128"> </a>
+          <a class="noEdge" ng-click = "addTodo('vegi plater' , ['7omos','baba 8anoj'], 250,'../img/shawarma.jpg')" >      <img src = {{buttonImg[4]}}  height="128" width="128"> </a>
+      </div>
+
+        <div class="button-bar">
+        <a class="thinner button " ng-click = "addTodo('Falafel' , ['7mose','t7ine','me'] , 500,'../img/falafel.jpg')" >FAlafel</a>
+        <a class=" button " ng-click = "addTodo('Shawarma' , ['chicken','kassem'], 30,'../img/shawarma.jpg')"   >Shawarma</a>
+        <a class=" button " ng-click = "addTodo('Fatoush' , ['5obez','salad'], 550,'../img/fatosh.jpg')"        >fatoush</a>
+        <a class=" button " ng-click = "addTodo('vegi plater' , ['7omos','baba 8anoj'], 250,'../img/vegi_plater.JPG')" > homus</a>
+        <a class=" button " ng-click = "addTodo('vegi plater' , ['7omos','baba 8anoj'], 250,'../img/shawarma.jpg')" >baba 8anoj</a>
       </div>
       <div class="button-bar">
           <a class="noEdge button button-outline " ng-click = "addTodo('Falafel' , ['7mose','t7ine','me'] , 500,'../img/falafel.jpg')" >       <img src = {{buttonImg[0]}}     height="128" width="128" > </a>

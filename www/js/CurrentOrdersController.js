@@ -2,22 +2,17 @@ angular.module('myapp.CurrentOrdersController', ['ionic'])
 
 
 .controller('CurrentOrdersCtrl', function($scope, $ionicModal, $ionicPopup) {
+  $scope.saveAt = 'grocery-bear0008'
 
-  $scope.saved = localStorage.getItem('grocery-bear0065');
-  $scope.todos = (localStorage.getItem('grocery-bear0065') !== null) ? JSON.parse($scope.saved) : [{
-    text: 'DrumSticks',
-    done: false
-  }, {
-    text: 'CornBread',
-    done: false
-  }, {
-    text: 'Peach Schnapps',
-    done: false
-  }, {
-    text: 'Carrots',
-    done: false
-  }];
-  localStorage.setItem('grocery-bear0065', JSON.stringify($scope.todos));
+  $scope.saved = localStorage.getItem( $scope.saveAt);
+  $scope.todos = (localStorage.getItem( $scope.saveAt) !== null) ? JSON.parse($scope.saved) : [{
+        orderNum: 0,
+        order: []
+      }, {
+        orderNum: 1,
+        order: []
+      }];
+  localStorage.setItem( $scope.saveAt, JSON.stringify($scope.todos));
 
   $scope.addTodo = function() {
     $scope.todos.push({
@@ -25,7 +20,7 @@ angular.module('myapp.CurrentOrdersController', ['ionic'])
       done: false
     });
     $scope.todoText = ''; //clear the input after adding
-    localStorage.setItem('grocery-bear0065', JSON.stringify($scope.todos));
+    localStorage.setItem( $scope.saveAt, JSON.stringify($scope.todos));
   };
 
   /*Delete Funtion*/
@@ -55,7 +50,7 @@ angular.module('myapp.CurrentOrdersController', ['ionic'])
             if (!todo.done)
               $scope.todos.push(todo);
           });
-          localStorage.setItem('grocery-bear0065', JSON.stringify($scope.todos));
+          localStorage.setItem( $scope.saveAt, JSON.stringify($scope.todos));
         } else {
 
         }

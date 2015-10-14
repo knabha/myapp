@@ -1,8 +1,51 @@
 angular.module('myapp.NewOrderController', ['ionic'])
 
 .controller('NewOrderCtrl', function($scope , $state ,$ionicModal, $ionicPopup) {
+    
+    $scope.tab = 1;
 
-    $scope.tab = 1
+    $scope.buttonImg = ["../img/falafel.png","../img/shawarma.jpg","../img/fatosh.jpg","../img/vegi_plater.JPG","../img/vegi_plater.JPG","../img/vegi_plater.JPG"]
+
+    $scope.saveAt = 'grocery-bear0066';
+    $scope.saved = localStorage.getItem($scope.saveAt);
+    $scope.todos = (localStorage.getItem($scope.saveAt) !== null) ? JSON.parse($scope.saved) : [{
+      text: 'DrumSticks',
+      ing: "Fool",
+      price: 500,
+      image: "../img/falafel.jpg",
+      done: false 
+    }, {
+      text: 'CornBread',
+      ing: "hmmm",
+      price: 500,
+      image: "../img/falafel.jpg",
+      done: false
+    }, {
+      text: 'Peach Schnapps',
+      ing: "nothing",
+      price: 500,
+      image: "../img/falafel.jpg",
+      done: false
+    }, {
+      text: 'Carrots',
+      ing: "kizeebbb",
+      price: 500,
+      image: "../img/falafel.jpg",
+      done: false
+    }];
+    localStorage.setItem($scope.saveAt, JSON.stringify($scope.todos));
+
+
+    $scope.saveOrdersAt = 'grocery-bear0008';
+    $scope.savedOrders = localStorage.getItem($scope.saveOrdersAt);
+    $scope.orders = (localStorage.getItem($scope.saveOrdersAt) !== null) ? JSON.parse($scope.savedOrders) : [{
+        orderNum: 0,
+        order: []
+      }, {
+        orderNum: 1,
+        order: []
+      }];
+    localStorage.setItem($scope.saveOrdersAt, JSON.stringify($scope.orders));
 
     $scope.goToPage = function(page) {
         $state.go(page);
@@ -17,36 +60,6 @@ angular.module('myapp.NewOrderController', ['ionic'])
         return $scope.tab === checkTab;
     }
 
-  $scope.buttonImg = ["../img/falafel.png","../img/shawarma.jpg","../img/fatosh.jpg","../img/vegi_plater.JPG","../img/vegi_plater.JPG","../img/vegi_plater.JPG"]
-
-  $scope.saved = localStorage.getItem('grocery-bear0065');
-  $scope.todos = (localStorage.getItem('grocery-bear0065') !== null) ? JSON.parse($scope.saved) : [{
-    text: 'DrumSticks',
-    ing: "Fool",
-    price: 500,
-    image: "../img/falafel.jpg",
-    done: false 
-  }, {
-    text: 'CornBread',
-    ing: "hmmm",
-    price: 500,
-    image: "../img/falafel.jpg",
-    done: false
-  }, {
-    text: 'Peach Schnapps',
-    ing: "nothing",
-    price: 500,
-    image: "../img/falafel.jpg",
-    done: false
-  }, {
-    text: 'Carrots',
-    ing: "kizeebbb",
-    price: 500,
-    image: "../img/falafel.jpg",
-    done: false
-  }];
-  localStorage.setItem('grocery-bear0065', JSON.stringify($scope.todos));
-
   $scope.addTodo = function(order, ingredient, p,img) {
     $scope.todos.push({
       text: order,
@@ -56,8 +69,8 @@ angular.module('myapp.NewOrderController', ['ionic'])
       done: false
     });
     $scope.todoText = ''; //clear the input after adding
-    localStorage.setItem('grocery-bear0065', JSON.stringify($scope.todos));
-  };
+    localStorage.setItem($scope.saveAt, JSON.stringify($scope.todos));
+  }
 
 
   /*Delete Funtion*/
@@ -87,7 +100,7 @@ angular.module('myapp.NewOrderController', ['ionic'])
             if (!todo.done)
               $scope.todos.push(todo);
           });
-          localStorage.setItem('grocery-bear0065', JSON.stringify($scope.todos));
+          localStorage.setItem($scope.saveAt, JSON.stringify($scope.todos));
         } else {
 
         }
@@ -110,5 +123,25 @@ angular.module('myapp.NewOrderController', ['ionic'])
           $scope.todos[i].done = true;
       }
   }
+
+  $scope.getTotal = function(){
+
+      $totalPrice = 0;
+      for (i = 0; i < $scope.todos.length; i++) { 
+          $totalPrice += $scope.todos[i].price;
+      }
+
+      return $totalPrice
+  }
+
+  $scope.addOrders = function(order_Num, order) {
+    $scope.orders.push({
+        orderNum: order_Num,
+        order: order
+    });
+    localStorage.setItem($scope.saveOrdersAt, JSON.stringify($scope.orders));
+  }
+
+
 
 });

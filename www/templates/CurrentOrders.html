@@ -23,7 +23,8 @@
         <label class="checkbox">
           <input type="checkbox" ng-model="todo.done">
         </label>
-        {{todo.text}}
+        {{todo.orderNum}}
+        {{todo.order[0].text}}
 
         <button class="button button-clear trash" ng-click="archive()">
           <i class="ion-trash-b"></i>
@@ -32,7 +33,6 @@
       </ion-item>
 
     </ion-list>
-
 
   </ion-content>
 
